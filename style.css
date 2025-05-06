@@ -7,6 +7,9 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    background: url('hand.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8; /* Low opacity for the background image */
 }
 
 .scrolling-text {
