@@ -22,7 +22,7 @@ body::before {
     background: url('hand.jpg') no-repeat center center fixed;
     background-size: cover;
     opacity: var(--background-opacity, 0.2); /* Use CSS variable for opacity */
-    z-index: -1;
+    z-index: 1; /* Ensure the background image is behind the scrolling text */
 }
 
 .scrolling-text {
@@ -35,6 +35,7 @@ body::before {
     justify-content: start;
     height: 200%; /* Double the height to accommodate seamless looping */
     overflow: hidden;
+    z-index: 2; /* Ensure the scrolling text is above the background */
 }
 
 .text-content {
@@ -62,5 +63,19 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+input#inputField {
+    position: absolute;
+    bottom: 20px;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    z-index: 3; /* Ensure the input field has the highest z-index */
 }
 

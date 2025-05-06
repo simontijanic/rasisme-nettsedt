@@ -1,10 +1,16 @@
 const scrollingText = document.getElementById('scrollingText');
-const stopButton = document.getElementById('stopButton');
 
-stopButton.addEventListener('click', () => {
-    scrollingText.style.animationPlayState = 'paused';
-    scrollingText.style.display = 'none'; // Remove the text when the button is pressed
+const inputField = document.getElementById('inputField');
 
-    // Set the background image opacity to 1
-    document.body.style.setProperty('--background-opacity', '1');
+inputField.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        if (inputField.value.trim() === "Im not a racist") {
+            scrollingText.style.animationPlayState = 'paused';
+            scrollingText.style.display = 'none'; // Remove the text when the correct input is entered
+
+            document.body.style.setProperty('--background-opacity', '1');
+        } else {
+            alert("Incorrect input. Please type: Im not a racist");
+        }
+    }
 });
