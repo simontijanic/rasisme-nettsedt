@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.scrolling-text {
+    font-size: 24px;
+    position: absolute;
+    animation: scroll-vertical 10s linear infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 200%;
+    overflow: hidden;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+@keyframes scroll-vertical {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    right: 210px;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
