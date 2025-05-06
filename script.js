@@ -1,12 +1,16 @@
 const scrollingText = document.getElementById('scrollingText');
-
 const inputField = document.getElementById('inputField');
 
-inputField.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
+inputField.style.display = 'none';
+
+document.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter' && inputField.style.display === 'none') {
+        inputField.style.display = 'block';
+        inputField.focus();
+    } else if (event.key === 'Enter' && inputField.style.display === 'block') {
         if (inputField.value.trim() === "Im not a racist") {
             scrollingText.style.animationPlayState = 'paused';
-            scrollingText.style.display = 'none'; // Remove the text when the correct input is entered
+            scrollingText.style.display = 'none'; 
 
             document.body.style.setProperty('--background-opacity', '1');
         } else {
